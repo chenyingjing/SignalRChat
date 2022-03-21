@@ -22,7 +22,7 @@ $(function () {
     });
 
     function OnGetMemberSuccess(data, status) {
-        alert(data + "   " + status);
+        //alert(data + "   " + status);
     }
 
     function OnGetMemberError(request, status, error) {

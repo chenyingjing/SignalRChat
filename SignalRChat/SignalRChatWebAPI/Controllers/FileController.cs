@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
+using SignalRChatWebAPI.Hubs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,11 +28,19 @@ namespace SignalRChatWebAPI.Controllers
         //    return "value";
         //}
 
+        private readonly IHubContext<ChatHub> _hubContext;
+
+        public FileController(IHubContext<ChatHub> hubContext)
+        {
+            _hubContext = hubContext;
+        }
+
         // POST api/<FileController>
         [HttpPost]
-        public void Post([FromBody] MyData value)
+        public async void Post([FromBody] MyData value)
         //public void Post([FromBody] string value)
         {
+            await _hubContext.Clients.All.SendAsync("ReceiveMessage", "user1", "Hello,abc");
         }
 
 
