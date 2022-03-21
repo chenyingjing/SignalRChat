@@ -6,7 +6,24 @@
         xmlns:local="clr-namespace:SignalRChatClient"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Label Content="Name" />
+            <TextBox x:Name="userTextBox" Grid.Column="1" />
+            <Label Content="Message" Grid.Row="1"/>
+            <TextBox x:Name="messageTextBox" Grid.Row="1" Grid.Column="1" />
+        </Grid>
+        <Button x:Name="connectButton" Content="connect" Click="connectButton_Click" />
+        <Button x:Name="sendButton" Content="send" Click="sendButton_Click"/>
+        <ListBox x:Name="messagesList" />
+
+    </StackPanel>
 </Window>
