@@ -75,6 +75,7 @@ namespace SignalRChatWebAPI
             {
                 endpoints.MapControllers();
                 endpoints.MapHub<ChatHub>("/chatHub");
+                endpoints.MapHub<StronglyTypedChatHub>("/stronglyTypedChatHub");
             });
         }
     }

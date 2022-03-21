@@ -27,7 +27,8 @@ namespace SignalRChatClient
             InitializeComponent();
 
             connection = new HubConnectionBuilder()
-                .WithUrl("https://localhost:5001/ChatHub")
+                //.WithUrl("https://localhost:5001/ChatHub")
+                .WithUrl("https://localhost:5001/stronglyTypedChatHub")
                 .Build();
 
             connection.Closed += async (error) =>
